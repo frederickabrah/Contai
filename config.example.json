@@ -1,0 +1,68 @@
+{
+  "_COMMENT": "AI Growth Engine Configuration File",
+  "_INSTRUCTIONS": "Copy this file to 'config.json' and fill in your details. The tool will read this file to customize content for your brand/niche.",
+
+  "brand": {
+    "_COMMENT": "Your brand identity - what you want to be known",
+    "name": "Contai",
+    "tagline": "The AI-Powered Content Engine",
+    "url": "https://github.com/frederickabrah/Contai",
+    "scarcity": "Optional: e.g., '412/500 spots filled' or leave empty"
+  },
+
+  "niche": {
+    "_COMMENT": "Your industry and target audience",
+    "industry": "e.g., Crypto Security, B2B SaaS, E-commerce, Fitness, etc.",
+    "targetAudience": "e.g., Crypto traders aged 18-35, Startup founders, Online shoppers",
+    "painPoints": [
+      "Problem #1 your audience faces",
+      "Problem #2 your audience faces",
+      "Problem #3 your audience faces"
+    ]
+  },
+
+  "brandVoice": {
+    "_COMMENT": "How your content should sound",
+    "tone": "e.g., Direct, educational, no-BS, friendly, professional",
+    "style": "e.g., Like a friend warning you about danger, Like a trusted advisor"
+  },
+
+  "product": {
+    "_COMMENT": "What you're promoting - features and pricing",
+    "features": [
+      "Feature #1",
+      "Feature #2",
+      "Feature #3"
+    ],
+    "pricing": {
+      "free": "$0 - Description of free tier",
+      "pro": "$10/month - Description of pro tier",
+      "enterprise": "Custom pricing - Description"
+    }
+  },
+
+  "content": {
+    "_COMMENT": "Your content strategy",
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Topic #1 you want to cover",
+      "Topic #2 you want to cover",
+      "Topic #3 you want to cover"
+    ]
+  },
+
+  "nicheSpecific": {
+    "_COMMENT": "Industry-specific terminology (optional)",
+    "terminology": {
+      "customer": "What you call your customers/users",
+      "product": "What you call your product/service",
+      "problem": "What you call the problem you solve",
+      "event": "Industry events/news (e.g., rugpulls, data breaches, etc.)"
+    }
+  }
+}

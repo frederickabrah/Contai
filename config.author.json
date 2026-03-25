@@ -1,0 +1,71 @@
+{
+  "_COMMENT": "Author/Writer Configuration - For fiction authors, non-fiction writers, and storytellers",
+  "_USAGE": "Copy this to config.json and customize with your book/author details",
+
+  "brand": {
+    "name": "Author Your Name",
+    "tagline": "Weaving tales that keep you up all night",
+    "url": "https://yourbookpage.com",
+    "scarcity": "New book launching March 2026 - Pre-order now"
+  },
+
+  "niche": {
+    "industry": "Fiction Writing / Publishing",
+    "targetAudience": "Readers of thriller, mystery, and suspense novels",
+    "painPoints": [
+      "Predictable plot twists that disappoint",
+      "Flat, one-dimensional characters",
+      "Slow pacing that loses interest",
+      "Endings that don't satisfy"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Mysterious, engaging, witty, thoughtful",
+    "style": "Like a storyteller around a campfire drawing you in"
+  },
+
+  "product": {
+    "features": [
+      "Page-turning thrillers with unexpected twists",
+      "Complex, relatable characters",
+      "Immersive worlds and settings",
+      "Fast-paced plots with emotional depth",
+      "Satisfying conclusions",
+      "Books you can't put down"
+    ],
+    "pricing": {
+      "ebook": "$4.99 - Kindle/PDF/EPUB",
+      "paperback": "$14.99 - Print edition",
+      "audiobook": "$19.99 - Audible narration",
+      "boxset": "$29.99 - Complete series bundle"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Character introductions and backstories",
+      "Plot twist teasers (no spoilers)",
+      "Writing process and daily routine",
+      "Reading recommendations and reviews",
+      "Behind-the-scenes research for books",
+      "Reader Q&A sessions",
+      "Book launch updates"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Readers/Fans",
+      "product": "Books/Stories",
+      "problem": "Writer's block",
+      "event": "Book launches"
+    }
+  }
+}

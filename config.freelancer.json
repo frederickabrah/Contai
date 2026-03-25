@@ -1,0 +1,69 @@
+{
+  "_COMMENT": "Freelancer Configuration - For designers, developers, writers, and other freelancers looking for gigs",
+  "_USAGE": "Copy this to config.json and customize with your details",
+
+  "brand": {
+    "name": "YourName Design",
+    "tagline": "Turning ideas into stunning visuals that convert",
+    "url": "https://yourportfolio.com",
+    "scarcity": "2 spots open for January"
+  },
+
+  "niche": {
+    "industry": "Graphic Design & Branding",
+    "targetAudience": "Startup founders and small business owners who need professional design",
+    "painPoints": [
+      "Ugly logos that don't convert or look amateur",
+      "Inconsistent brand identity across platforms",
+      "DIY designs that hurt credibility",
+      "Missing deadlines from unreliable designers"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Friendly, creative, confident, reliable",
+    "style": "Like a creative friend who gives honest feedback and delivers on time"
+  },
+
+  "product": {
+    "features": [
+      "Logo design that stands out",
+      "Complete brand identity packages",
+      "Social media graphics and templates",
+      "Website design and UI/UX",
+      "Fast turnaround (3-5 days)",
+      "Unlimited revisions until perfect"
+    ],
+    "pricing": {
+      "starter": "$500 - Logo design only",
+      "pro": "$1500 - Full brand identity package",
+      "premium": "$3000 - Brand + website design"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Logo design mistakes to avoid",
+      "Brand identity tips for startups",
+      "Color psychology in design",
+      "Before/after redesigns",
+      "Client success stories and testimonials",
+      "Design trends in 2026"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Clients",
+      "product": "Design projects",
+      "problem": "Design mistakes",
+      "event": "Project launches"
+    }
+  }
+}

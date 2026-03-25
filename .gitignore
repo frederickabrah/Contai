@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.git/
+# Environment variables
+.env
+
+# Configuration (keep examples, hide actual config)
+config.json
+brain.json
+my-style.txt
+
+# Personal data
+TODAYnews.md
+
+# Generated output
+daily-content-*.json
+content-batch-*.json
+
+# System / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.tmp
+pygitup_security_audit.log

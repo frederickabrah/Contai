@@ -1,0 +1,67 @@
+{
+  "_COMMENT": "E-commerce Configuration Example",
+
+  "brand": {
+    "name": "YourStore",
+    "tagline": "Quality Products. Unbeatable Prices. Delivered Fast.",
+    "url": "https://yourstore.com",
+    "scarcity": "Free shipping on orders $50+"
+  },
+
+  "niche": {
+    "industry": "E-commerce / Online Retail",
+    "targetAudience": "Online shoppers aged 25-45 looking for quality deals",
+    "painPoints": [
+      "Overpaying for branded products",
+      "Low quality items from unknown sellers",
+      "Slow shipping times",
+      "Difficult return processes"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Friendly, helpful, trustworthy, enthusiastic",
+    "style": "Like a knowledgeable friend who finds the best deals"
+  },
+
+  "product": {
+    "features": [
+      "Curated product selection",
+      "Quality guarantee",
+      "Fast shipping (2-3 days)",
+      "Easy 30-day returns",
+      "24/7 customer support",
+      "Loyalty rewards program"
+    ],
+    "pricing": {
+      "standard": "Regular prices with free shipping $50+",
+      "vip": "$9.99/month - Free shipping always, 10% off everything"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Product comparisons",
+      "Shopping tips",
+      "Deal alerts",
+      "Customer reviews",
+      "Behind the scenes",
+      "Lifestyle content"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Shoppers/customers",
+      "product": "Products/items",
+      "problem": "Bad deals/low quality",
+      "event": "Sales/product launches"
+    }
+  }
+}

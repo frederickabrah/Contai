@@ -1,0 +1,69 @@
+{
+  "_COMMENT": "Job Seeker Configuration - For professionals looking for employment opportunities",
+  "_USAGE": "Copy this to config.json and customize with your skills and industry",
+
+  "brand": {
+    "name": "Your Name",
+    "tagline": "Full-stack developer building scalable solutions that users love",
+    "url": "https://yourgithub.com",
+    "scarcity": "Open to opportunities starting February 2026"
+  },
+
+  "niche": {
+    "industry": "Software Development / Tech",
+    "targetAudience": "Hiring managers, tech recruiters, and startup founders",
+    "painPoints": [
+      "Developers who can't ship production-ready code",
+      "Poor code quality creating technical debt",
+      "Missing deadlines and poor communication",
+      "Team members who don't collaborate well"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Professional, humble, passionate, collaborative",
+    "style": "Like a teammate who ships quality code and helps others grow"
+  },
+
+  "product": {
+    "features": [
+      "5+ years experience in React, Node.js, Python",
+      "Cloud deployment expertise (AWS, GCP, Azure)",
+      "Database design and optimization",
+      "RESTful and GraphQL API development",
+      "Agile/Scrum team experience",
+      "Strong communication and documentation skills"
+    ],
+    "pricing": {
+      "fulltime": "Open to full-time roles ($120K-$180K)",
+      "contract": "Available for contract work ($80-$150/hour)",
+      "remote": "Prefer remote but open to hybrid"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Code optimization tips and best practices",
+      "Project build breakdowns and lessons learned",
+      "Tech stack comparisons and recommendations",
+      "Learning journey and skill development",
+      "Open source contributions",
+      "Interview prep tips for developers"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Companies/Teams",
+      "product": "Projects/Code",
+      "problem": "Technical challenges",
+      "event": "Product launches"
+    }
+  }
+}

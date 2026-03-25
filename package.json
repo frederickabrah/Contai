@@ -1,0 +1,46 @@
+{
+  "name": "contai",
+  "version": "1.0.0",
+  "description": "Contai - Universal AI-powered content growth engine for any brand/niche",
+  "main": "contai.js",
+  "type": "module",
+  "bin": {
+    "contai": "./contai.js"
+  },
+  "scripts": {
+    "start": "node contai.js",
+    "daily": "node contai.js daily",
+    "batch": "node contai.js batch",
+    "help": "node contai.js help",
+    "setup": "npm install && cp config.example.json config.json"
+  },
+  "keywords": [
+    "ai",
+    "content",
+    "marketing",
+    "social-media",
+    "growth",
+    "twitter",
+    "linkedin",
+    "instagram",
+    "content-generator",
+    "ai-writing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frederickabrah/Contai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frederickabrah/Contai/issues"
+  },
+  "homepage": "https://github.com/frederickabrah/Contai#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

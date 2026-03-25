@@ -1,0 +1,68 @@
+{
+  "_COMMENT": "B2B SaaS Configuration Example",
+
+  "brand": {
+    "name": "YourSaaS",
+    "tagline": "Automate Your Workflow. 10x Your Productivity.",
+    "url": "https://yoursaas.com",
+    "scarcity": "Join 500+ founders"
+  },
+
+  "niche": {
+    "industry": "B2B SaaS / Productivity Tools",
+    "targetAudience": "Startup founders, solopreneurs, and small teams",
+    "painPoints": [
+      "Overwhelmed by manual tasks",
+      "Too many tools, not enough integration",
+      "Wasting time on repetitive work",
+      "Need to scale without hiring"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Professional yet approachable, data-driven, actionable",
+    "style": "Like a productivity coach who's built successful companies"
+  },
+
+  "product": {
+    "features": [
+      "All-in-one workspace",
+      "AI-powered automation",
+      "Team collaboration tools",
+      "Analytics dashboard",
+      "100+ integrations",
+      "Custom workflows"
+    ],
+    "pricing": {
+      "free": "$0 - Solo user, basic features",
+      "pro": "$15/month - Unlimited projects, AI features",
+      "team": "$50/month - 5 team members, advanced analytics"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Productivity hacks",
+      "Automation tips",
+      "Startup growth",
+      "Team management",
+      "Tool stack optimization",
+      "Founder mental health"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Founders/users",
+      "product": "SaaS/workflows",
+      "problem": "Inefficiency/manual work",
+      "event": "Product launches/funding news"
+    }
+  }
+}

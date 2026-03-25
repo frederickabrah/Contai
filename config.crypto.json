@@ -1,0 +1,70 @@
+{
+  "_COMMENT": "Rugsnitch Configuration - Crypto Security Example",
+
+  "brand": {
+    "name": "Rugsnitch",
+    "tagline": "Read Any Contract. Find Every Trap. Lose Nothing.",
+    "url": "https://rugsnitch.pages.dev",
+    "scarcity": "412/500 spots filled"
+  },
+
+  "niche": {
+    "industry": "Crypto Security",
+    "targetAudience": "Crypto traders aged 18-35 who have lost money to scams",
+    "painPoints": [
+      "Lost money to rugpulls/honeypots",
+      "Can't read smart contracts",
+      "Tired of getting scammed",
+      "Need instant security answers"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Direct, no-BS, educational, slightly aggressive",
+    "style": "Like a security expert friend warning you about danger"
+  },
+
+  "product": {
+    "features": [
+      "Multi-chain support (Ethereum, BSC, Base, Polygon)",
+      "99.7% honeypot detection accuracy",
+      "EIP-3529 state override simulation",
+      "Owner privilege detection (mint, tax, blacklist)",
+      "Liquidity pool analysis + LP lock detection",
+      "Deployer reputation tracking",
+      "Plain English warnings"
+    ],
+    "pricing": {
+      "free": "$0 - 1 scan lifetime",
+      "pro": "$10/month - 20 scans/month",
+      "power": "$50/month - 150 scans/month + API access",
+      "ultimate": "$500/month - 1,500 scans/month + priority support"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Honeypot detection",
+      "Rugpull prevention",
+      "Smart contract security",
+      "Liquidity locks",
+      "Deployer reputation",
+      "Crypto due diligence"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Traders/victims",
+      "product": "Tokens/contracts",
+      "problem": "Rugpulls/honeypots/scams",
+      "event": "Rugpulls"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "_COMMENT": "Content Creator Configuration - For influencers, YouTubers, TikTokers, and personal brands",
+  "_USAGE": "Copy this to config.json and customize with your creator details",
+
+  "brand": {
+    "name": "YourName Creates",
+    "tagline": "Creating content that entertains, educates, and inspires",
+    "url": "https://linktr.ee/yourname",
+    "scarcity": "New video every Tuesday & Friday"
+  },
+
+  "niche": {
+    "industry": "Content Creation / Entertainment",
+    "targetAudience": "Young adults 18-35 interested in lifestyle and entertainment",
+    "painPoints": [
+      "Boring, repetitive content with no value",
+      "Creators who are fake or inauthentic",
+      "Clickbait that disappoints",
+      "No connection with their audience"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Fun, authentic, energetic, relatable",
+    "style": "Like a friend hanging out and sharing cool stuff"
+  },
+
+  "product": {
+    "features": [
+      "Entertaining videos and posts",
+      "Behind-the-scenes content",
+      "Collaborations with other creators",
+      "Community engagement and responses",
+      "Exclusive content for subscribers",
+      "Merchandise and products"
+    ],
+    "pricing": {
+      "free": "$0 - YouTube, TikTok, Instagram content",
+      "patreon": "$5/month - Exclusive content and early access",
+      "vip": "$25/month - 1-on-1 calls and personalized content",
+      "merch": "$20-$50 - Branded merchandise"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Day in the life content",
+      "Tips and tutorials in your niche",
+      "Reaction videos and commentary",
+      "Collaboration announcements",
+      "Personal stories and experiences",
+      "Q&A sessions with followers",
+      "Challenges and trends"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Followers/Fans",
+      "product": "Content/Videos",
+      "problem": "Creative blocks",
+      "event": "Video launches"
+    }
+  }
+}

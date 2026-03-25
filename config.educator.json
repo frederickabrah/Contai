@@ -1,0 +1,70 @@
+{
+  "_COMMENT": "Educator Configuration - For teachers, coaches, course creators, and tutors",
+  "_USAGE": "Copy this to config.json and customize with your teaching niche",
+
+  "brand": {
+    "name": "MathWithYourName",
+    "tagline": "Making calculus actually make sense for everyone",
+    "url": "https://yourcoursesite.com",
+    "scarcity": "Enrollment closes Friday - Only 10 spots left"
+  },
+
+  "niche": {
+    "industry": "Online Education / Math Tutoring",
+    "targetAudience": "High school and college students struggling with math",
+    "painPoints": [
+      "Confusing textbook explanations that don't help",
+      "Teachers who go too fast or don't answer questions",
+      "Test anxiety and poor study habits",
+      "Falling behind and feeling hopeless"
+    ]
+  },
+
+  "brandVoice": {
+    "tone": "Patient, encouraging, relatable, enthusiastic",
+    "style": "Like a tutor who actually cares and explains things clearly"
+  },
+
+  "product": {
+    "features": [
+      "Step-by-step video lessons",
+      "Practice problems with detailed solutions",
+      "Live Q&A sessions every week",
+      "Downloadable study guides and cheat sheets",
+      "Private student community for support",
+      "Lifetime access to all content"
+    ],
+    "pricing": {
+      "free": "$0 - YouTube content and free resources",
+      "course": "$97 - Full calculus mastery course",
+      "tutoring": "$50/hour - 1-on-1 private sessions",
+      "premium": "$197 - Course + monthly group coaching"
+    }
+  },
+
+  "content": {
+    "pillars": {
+      "educational": "40%",
+      "caseStudies": "30%",
+      "engagement": "20%",
+      "product": "10%"
+    },
+    "topics": [
+      "Common calculus mistakes and how to fix them",
+      "Quick problem-solving tricks and shortcuts",
+      "Student success stories and grade improvements",
+      "Study tips and exam prep strategies",
+      "Math anxiety and mindset coaching",
+      "Real-world applications of math concepts"
+    ]
+  },
+
+  "nicheSpecific": {
+    "terminology": {
+      "customer": "Students",
+      "product": "Courses/Lessons",
+      "problem": "Learning challenges",
+      "event": "Exam seasons"
+    }
+  }
+}
