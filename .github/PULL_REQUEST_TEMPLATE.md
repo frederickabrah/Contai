@@ -1,38 +1,57 @@
-# Pull Request Template
+# 🚀 Pull Request
 
-## Description
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context.
+## 📋 Describe your changes
+A clear and concise description of what this PR does.
 
-Fixes # (issue)
+## 🔗 Related Issue
+Fixes #(issue number)
 
-## Type of change
-Please delete options that are not relevant.
+## ✅ Type of Change
+- [ ] 🐛 Bug fix
+- [ ] ✨ New feature
+- [ ] 📚 Documentation update
+- [ ] 🎨 Style/formatting
+- [ ] ♻️ Code refactoring
+- [ ] ⚡ Performance improvement
+- [ ] 🧪 Test addition
+- [ ] 🔒 Security fix
+- [ ] 📦 Dependency update
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-- [ ] Performance improvement
-- [ ] Code refactoring (no functional changes)
+## 🧪 Testing Done
+- [ ] I've tested the changes locally
+- [ ] I've added/updated tests if applicable
+- [ ] All existing tests pass
+- [ ] I've tested on multiple platforms (Twitter, LinkedIn, etc.)
 
-## How Has This Been Tested?
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
+## 📸 Screenshots (if applicable)
+Add screenshots or terminal output showing your changes work.
 
-- [ ] Tested with different config templates
-- [ ] Tested on multiple platforms (twitter, linkedin, etc.)
-- [ ] Tested edge cases
-- [ ] Added/updated tests
+```bash
+# Command tested
+node contai.js [command] [options]
 
-## Checklist:
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have tested my changes thoroughly
+# Output
+[paste output here]
+```
 
-## Screenshots (if applicable)
-Add screenshots to help explain your changes.
+## 📝 Checklist
+- [ ] My code follows the project style guidelines
+- [ ] I've updated the documentation accordingly
+- [ ] I've checked for console errors
+- [ ] I've removed sensitive information (API keys, configs)
+- [ ] My changes don't break existing functionality
+- [ ] I've updated the version number if applicable
 
-## Additional Notes
-Any additional information that would be helpful for reviewers.
+## 🎯 Additional Context
+Add any other context about the PR here.
+
+## 📊 Before/After Comparison (if applicable)
+**Before:**
+```
+[Describe or show what it was like before]
+```
+
+**After:**
+```
+[Describe or show what it's like after]
+```
