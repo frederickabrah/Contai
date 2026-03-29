@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Configuration (users create their own)
+config.json
+
+# Generated content
+*.json
+!config.*.json
+!package.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Brain memory (personal data)
+brain.json
+
+# News files
+TODAYnews.md
+
+# Documentation (keep README)
+*.md
+!README.md
+
+# GitHub files
+.github/
+
+# Scripts (not needed for npm)
+setup.sh
+
+# Git files
+.git/
+.gitignore
+
+# Lock file (not needed for users)
+package-lock.json

@@ -4,9 +4,9 @@
 
   "brand": {
     "_COMMENT": "Your brand identity - what you want to be known",
-    "name": "Contai",
-    "tagline": "The AI-Powered Content Engine",
-    "url": "https://github.com/frederickabrah/Contai",
+    "name": "Your Brand Name",
+    "tagline": "Your catchy tagline",
+    "url": "https://yourwebsite.com",
     "scarcity": "Optional: e.g., '412/500 spots filled' or leave empty"
   },
 
@@ -63,6 +63,40 @@
       "product": "What you call your product/service",
       "problem": "What you call the problem you solve",
       "event": "Industry events/news (e.g., rugpulls, data breaches, etc.)"
+    }
+  },
+
+  "news": {
+    "_COMMENT": "Real-time news configuration for trend-based content",
+    "enabled": true,
+    "categories": [
+      "Your industry keywords for news search",
+      "e.g., cryptocurrency, blockchain, DeFi for crypto",
+      "e.g., SaaS, startups, venture capital for SaaS"
+    ],
+    "sources": {
+      "_COMMENT": "Enable/disable news sources",
+      "hackernews": true,
+      "reddit": true,
+      "googleTrends": true,
+      "rssFeeds": true,
+      "newsAPI": false
+    },
+    "subreddits": [
+      "Subreddits to monitor (if reddit enabled)",
+      "e.g., cryptocurrency, CryptoCurrency, ethtrader for crypto",
+      "e.g., SaaS, startups, entrepreneurship for SaaS"
+    ],
+    "rssFeeds": [
+      "RSS feeds to monitor (if rssFeeds enabled)",
+      "Examples:",
+      "https://techcrunch.com/feed/",
+      "https://news.ycombinator.com/rss",
+      "https://www.coindesk.com/arc/outboundfeeds/rss/"
+    ],
+    "googleTrends": {
+      "geo": "US",
+      "category": 0
     }
   }
 }

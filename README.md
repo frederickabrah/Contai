@@ -25,7 +25,64 @@ Contai is a **universal content generation tool** that creates viral social medi
 
 ---
 
-## 🚀 Advanced Features
+## 🆕 What's New in v2.0.0
+
+### 🔄 Repurposing Engine (Multiply Command)
+**Turn 1 idea into 7 formats.** Paste a blog post, winning tweet, or any content:
+```bash
+node contai.js multiply "your content here" twitter
+```
+Generates: 1 thread, 5 tweets, 1 case study, LinkedIn post, Instagram caption, 5 questions, 3 visual prompts
+
+### 🎭 Sentiment Overrides (Vibe Control)
+**Control the tone** with `--vibe` flag:
+```bash
+node contai.js thread "topic" twitter --vibe=aggressive
+node contai.js tweets "tips" linkedin --vibe=scientific
+```
+Available vibes: `aggressive`, `empathetic`, `sarcastic`, `scientific`, `minimalist`, `helpful`
+
+### 📊 CSV Export forSchedulers
+**Import directly to Buffer, Hypefury, or Taplio:**
+```bash
+node contai.js csv content-batch-2026-03-21.json
+```
+Generates a CSV file ready to upload to your scheduler.
+
+### 🩺 Content Doctor (Audit Command)
+**Get a viral score** for your content:
+```bash
+node contai.js audit "your post draft" twitter
+```
+Returns: Virality score, AI smell detection, 3 pro versions, line-by-line fixes
+
+### 📚 Narrative Sequences (NEW!)
+**Tell stories, not random posts:**
+```bash
+# 3-Day Rabbit Hole
+node contai.js sequence "your topic" 3 twitter
+
+# 5-Day Hero Journey
+node contai.js sequence "your topic" 5 linkedin
+```
+
+**3-Day Arc:**
+- Day 1: Stir the Pot (controversial)
+- Day 2: The Teach (solution)
+- Day 3: Social Proof (results)
+
+**5-Day Arc:**
+- Day 1: The Problem (pain)
+- Day 2: The Enemy (villain)
+- Day 3: The Discovery (breakthrough)
+- Day 4: The Solution (framework)
+- Day 5: The Transformation (results)
+
+**Why it works:** Creates a "rabbit hole" effect. People follow the story, engage daily, and convert by the end.
+
+---
+
+## 🚀 Advanced Features (v2.0.0)
 
 ### 1. 🧬 Style Mirroring (Identity Injector)
 **Stop sounding like AI.** Create `my-style.txt` and paste 3-5 examples of your best writing. Contai will analyze your sentence rhythm, emoji usage, and unique slang to generate content that sounds exactly like **YOU**.
@@ -35,6 +92,72 @@ Contai is a **universal content generation tool** that creates viral social medi
 
 ### 3. 📸 Visual Prompt Generator
 **Full-package posting.** Every piece of content includes a professional, high-quality 📸 **Visual Prompt** for AI image generators (Midjourney/DALL-E) that perfectly matches the vibe of your text.
+
+### 4. 🧠 Self-Critique Engine (Human-Like Filter)
+**Every piece of content is reviewed before you see it.** Contai automatically critiques generated content for:
+- AI-sounding language (removes corporate speak)
+- Hook strength (must stop scroll in 0.5 seconds)
+- Authenticity (sounds like a real human)
+- Conciseness (no fluff, every word matters)
+
+If content scores below 8/10, it's automatically rewritten until it's perfect.
+
+### 5. 🔄 Smart Model Rotation (Free Tier Optimized)
+**Never hit rate limits.** Contai automatically rotates between 3 Google Gemini models:
+- `gemini-2.5-flash-lite` - 1,000 requests/day (fastest)
+- `gemini-2.5-flash` - 250 requests/day (balanced)
+- `gemini-2.5-pro` - 100 requests/day (best quality)
+
+If one model hits quota, Contai seamlessly switches to the next. **Result: 1,350+ requests/day on free tier.**
+
+### 6. 📰 Real-Time News Integration (Trend Jacking)
+**Make content timely and relevant.** Create `TODAYnews.md` with industry news (paste from Grok/Twitter). Contai automatically:
+- Extracts trending topics, events, and people
+- @mentions relevant users
+- References specific events/amounts
+- Makes content URGENT and timely
+
+**Engagement boost: 3-10x higher on timely content.**
+
+### 7. 🧠 Long-Term Memory (Brain System)
+**Contai remembers and learns.** Every news sync, every generated piece, every victim/customer mentioned is stored in `brain.json`. Over time, Contai builds:
+- Customer/user database (who you've helped)
+- Product/project tracker (what you've covered)
+- Industry trends (patterns you've identified)
+- Successful hooks (what worked before)
+
+**Result: Content gets smarter and more specific over time.**
+
+### 8. 🎯 9 Pre-Built Config Templates
+**Ready for any use case:**
+- `config.freelancer.json` - Freelancers finding gigs
+- `config.jobseeker.json` - Job seekers attracting recruiters
+- `config.author.json` - Authors launching books
+- `config.educator.json` - Educators selling courses
+- `config.creator.json` - Content creators growing audience
+- `config.saas.json` - B2B SaaS companies
+- `config.ecommerce.json` - E-commerce stores
+- `config.crypto.json` - Crypto projects
+- `config.example.json` - Blank template
+
+**Copy, customize, start posting in 2 minutes.**
+
+### 9. 🌍 Multi-Platform Optimization
+**One command, 4 platforms:**
+- **Twitter** - Short, punchy, 280 chars, threads
+- **LinkedIn** - Professional, longer form, industry insights
+- **Instagram** - Visual captions, emoji-heavy, hashtags
+- **Facebook** - Community-focused, shareable
+
+**Same topic, automatically adapted for each platform.**
+
+### 10. 📦 Batch Generation (Time Saver)
+**Generate weeks of content in minutes:**
+- `daily` - 1 thread + 3 posts + 5 replies + bait + controversial
+- `week` - 7 days of content (7× daily packages)
+- `batch` - 2 weeks of content (6 threads + 25+ posts + 2 case studies)
+
+**20 minutes on Sunday = content for 2 weeks. Saves 10+ hours.**
 
 ---
 
