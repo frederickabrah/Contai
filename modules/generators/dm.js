@@ -3,7 +3,7 @@
  * Generates helpful responses to direct messages
  */
 
-import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
 
 /**
@@ -15,7 +15,7 @@ import { generateContent } from '../core/generator.js';
 export const generateDMResponse = async (question, platform = 'twitter') => {
   console.log('Generating response...');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
   const terminology = cfg.nicheSpecific?.terminology || {};

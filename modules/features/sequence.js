@@ -4,10 +4,8 @@
  */
 
 import fs from 'fs';
-import { getBestModel } from '../core/models.js';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
-import { reflectAndRefine } from '../filters/human-like.js';
-import { genAI } from '../core/generator.js';
 
 /**
  * Generate a narrative sequence (3-day or 5-day storytelling arc)
@@ -19,7 +17,7 @@ import { genAI } from '../core/generator.js';
 export const generateSequence = async (topic, days = 3, platform = 'twitter') => {
   console.log(`📚 Generating ${days}-day narrative sequence...\n`);
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
   const terminology = cfg.nicheSpecific?.terminology || {};
@@ -165,6 +163,7 @@ CRITICAL: This must be about ${topic}, NOT about social media strategy.
   console.log(`📱 Platform: ${platform}\n`);
 
   // Generate each day's content
+  let previousContent = '';
   for (let i = 0; i < sequence.days.length; i++) {
     const day = sequence.days[i];
     console.log(`\n${'='.repeat(50)}`);
@@ -177,24 +176,27 @@ BRAND: ${brandName}
 URL: ${url}
 PLATFORM: ${platform}
 
+${previousContent ? `PREVIOUS DAYS CONTENT (for context and continuity):
+${previousContent}
+` : ''}
+
 CRITICAL RULES:
 - Sound human, not AI (no corporate phrases)
 - Use short sentences. Fragments.
 - Be specific with examples
-- Reference previous days when applicable
+- Reference previous days explicitly (Day 1, Day 2, etc.)
+- Maintain the same topic (${topic}) throughout
 - Build narrative tension across the sequence
 
 Generate the content now:`;
 
     try {
-      const modelName = getBestModel();
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      let content = response.text().trim();
+      // Use the centralized generateContent function which handles model rotation
+      const content = await generateContent(prompt);
 
-      // Apply human-like filtering
-      content = await reflectAndRefine(content, prompt, modelName);
+      if (!content) {
+        throw new Error('Content generation returned null');
+      }
 
       sequenceData.days.push({
         day: i + 1,
@@ -202,6 +204,8 @@ Generate the content now:`;
         type: day.type,
         content: content
       });
+
+      previousContent += `\nDAY ${i + 1} (${day.name}):\n${content}\n`;
 
       console.log(content);
       console.log(`\n✅ Day ${i + 1} generated\n`);

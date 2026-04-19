@@ -32,6 +32,8 @@ export { generateDMResponse } from './generators/dm.js';
 export { generateInfluencerReplies } from './generators/replies.js';
 export { generateReplyBait } from './generators/bait.js';
 export { generateControversial } from './generators/controversial.js';
+export { generateStory } from './generators/story.js';
+export { generateTutorial } from './generators/tutorial.js';
 
 // Features - Advanced Functionality
 export { generateRepurposedContent } from './features/multiply.js';

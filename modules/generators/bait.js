@@ -3,7 +3,7 @@
  * Generates posts designed to spark engagement and replies
  */
 
-import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
 
 /**
@@ -14,7 +14,7 @@ import { generateContent } from '../core/generator.js';
 export const generateReplyBait = async (platform = 'twitter') => {
   console.log('Generating engagement bait...');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const industry = cfg.niche?.industry || 'your industry';
   const terminology = cfg.nicheSpecific?.terminology || {};

@@ -4,6 +4,7 @@
  */
 
 import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
 
 /**
@@ -15,7 +16,7 @@ import { generateContent } from '../core/generator.js';
 export const generateHooks = async (topic, platform = 'twitter') => {
   console.log('Generating viral hooks...');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const terminology = cfg.nicheSpecific?.terminology || {};
   const productTerm = terminology.product || 'products';

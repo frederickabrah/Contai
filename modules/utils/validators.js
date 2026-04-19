@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 /**
  * Contai Utils - Validators
  * Input validation utilities for CLI arguments and data
@@ -73,12 +75,9 @@ export const isValidTopic = (topic) => {
  * Validate file path exists
  * @param {string} filePath - File path to validate
  * @returns {boolean} Whether file exists
- * @note For synchronous file checks, use fs.existsSync() directly in calling code
  */
 export const fileExists = (filePath) => {
-  // This is a placeholder - use fs.existsSync() directly for sync checks
-  // Kept for API compatibility
-  return false;
+  return fs.existsSync(filePath);
 };
 
 /**

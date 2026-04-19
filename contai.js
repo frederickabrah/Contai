@@ -50,6 +50,8 @@ import {
   generateInfluencerReplies,
   generateReplyBait,
   generateControversial,
+  generateStory,
+  generateTutorial,
   // Features
   generateRepurposedContent,
   auditContent,
@@ -530,6 +532,16 @@ const main = async () => {
       console.log('\nHOT TAKES:\n', hotTakes);
       break;
 
+    case 'story':
+      const story = await generateStory(topic, platform);
+      console.log('\nSTORY:\n', story);
+      break;
+
+    case 'tutorial':
+      const tutorial = await generateTutorial(topic, platform);
+      console.log('\nTUTORIAL:\n', tutorial);
+      break;
+
     case 'daily':
       await generateDailyContent(platform);
       break;
@@ -565,9 +577,66 @@ const main = async () => {
       break;
 
     case 'sequence':
-      const seqDays = process.argv[5] === '5' ? 5 : 3;
-      const seqPlatform = process.argv[6] || platform;
+      const seqDays = process.argv[4] === '5' ? 5 : 3;
+      const seqPlatform = process.argv[5] || platform;
       await generateSequence(topic, seqDays, seqPlatform);
+      break;
+
+    case 'last':
+      console.log('📂 Finding your most recent content...\n');
+      const files = fs.readdirSync('.')
+        .filter(f => f.endsWith('.json') && (
+          f.startsWith('daily-content-') || 
+          f.startsWith('content-batch-') || 
+          f.startsWith('repurposed-') || 
+          f.startsWith('trend-content-') || 
+          f.startsWith('sequence-')
+        ))
+        .map(f => ({ name: f, time: fs.statSync(f).mtime.getTime() }))
+        .sort((a, b) => b.time - a.time);
+
+      if (files.length === 0) {
+        console.log('❌ No generated content found in this directory.');
+        break;
+      }
+
+      const latestFile = files[0].name;
+      console.log(`✨ Showing content from: ${latestFile}\n`);
+      
+      try {
+        const content = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
+        
+        // Pretty print logic based on content type
+        if (content.thread) {
+          console.log('🧵 THREAD:\n' + '─'.repeat(30));
+          if (content.thread.tweets) {
+            content.thread.tweets.forEach(t => console.log(t + '\n'));
+          } else {
+            console.log(content.thread + '\n');
+          }
+        }
+
+        if (content.tweets && Array.isArray(content.tweets)) {
+          console.log('🐦 STANDALONE POSTS:\n' + '─'.repeat(30));
+          content.tweets.forEach((t, i) => console.log(`[${i+1}] ${t}\n`));
+        }
+
+        if (content.caseStudy) {
+          console.log('📄 CASE STUDY:\n' + '─'.repeat(30));
+          console.log(content.caseStudy.content || content.caseStudy);
+        }
+
+        if (content.days && Array.isArray(content.days)) {
+          console.log('📚 SEQUENCE:\n' + '─'.repeat(30));
+          content.days.forEach(d => {
+            console.log(`\n📍 ${d.name}\n${d.content}\n`);
+          });
+        }
+
+        console.log('\n✅ End of content.');
+      } catch (e) {
+        console.error('❌ Error reading latest file:', e.message);
+      }
       break;
 
     case 'trends':

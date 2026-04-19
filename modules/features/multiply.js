@@ -4,25 +4,47 @@
  */
 
 import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
+import { scrapeUrl } from '../utils/scraper.js';
 
 /**
  * Repurpose seed content into multiple formats
- * @param {string} seedContent - Original content to repurpose
+ * @param {string} seedContent - Original content to repurpose (text, file path, or URL)
  * @param {string} platform - Target platform (twitter, linkedin, etc.)
  * @returns {Promise<Object|null>} Repurposed content object or null
  */
 export const generateRepurposedContent = async (seedContent, platform = 'twitter') => {
   console.log('🔄 Repurposing your content into multiple formats...\n');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  let actualContent = seedContent;
+  let sourceTitle = 'Seed Content';
+
+  // 1. Handle URL Input
+  if (seedContent.startsWith('http://') || seedContent.startsWith('https://')) {
+    const scraped = await scrapeUrl(seedContent);
+    if (scraped) {
+      actualContent = `TITLE: ${scraped.title}\n\nCONTENT:\n${scraped.content}`;
+      sourceTitle = scraped.title;
+      console.log(`✅ Successfully scraped: ${scraped.title}\n`);
+    } else {
+      console.error('⚠️ Could not scrape URL. Falling back to raw URL text.');
+    }
+  } 
+  // 2. Handle File Input
+  else if (fs.existsSync(seedContent)) {
+    actualContent = fs.readFileSync(seedContent, 'utf8');
+    console.log(`📖 Read content from file: ${seedContent}\n`);
+  }
+
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://rugsnitch.pages.dev';
 
   const prompt = `You are a Content Repurposing Expert.
 
 SEED CONTENT:
-${seedContent}
+${actualContent}
 
 TASK: Break this seed content into organized, clean content formats.
 
@@ -95,7 +117,9 @@ Return ONLY the JSON object, nothing else.`;
     const content = JSON.parse(jsonMatch[0]);
 
     if (content) {
-      const filename = `repurposed-${new Date().toISOString().split('T')[0]}.json`;
+      const { sanitizeForFilename } = await import('../utils/validators.js');
+      const safeTitle = sanitizeForFilename(sourceTitle);
+      const filename = `repurposed-${safeTitle}-${new Date().toISOString().split('T')[0]}.json`;
       fs.writeFileSync(filename, JSON.stringify(content, null, 2));
       console.log(`\n💾 Repurposed content saved to ${filename}`);
       console.log('\n✅ Generated:');

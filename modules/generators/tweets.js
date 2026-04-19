@@ -4,6 +4,7 @@
  */
 
 import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { getPlatformPrompt } from '../platforms/index.js';
 import { generateContent } from '../core/generator.js';
 
@@ -16,7 +17,7 @@ import { generateContent } from '../core/generator.js';
 export const generateTweets = async (topic, platform = 'twitter') => {
   console.log('Generating standalone posts...');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
   const terminology = cfg.nicheSpecific?.terminology || {};

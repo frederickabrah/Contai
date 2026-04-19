@@ -8,19 +8,37 @@ import fs from 'fs';
 let config = null;
 
 /**
- * Load configuration from config.json
+ * Load configuration from config.json or a specified brand file
  * @returns {Object} Configuration object
  */
 export const loadConfig = () => {
   if (config) return config; // Cache after first load
 
+  // Check for --config=filename or --brand=name flags
+  const configFlag = process.argv.find(arg => arg.startsWith('--config='));
+  const brandFlag = process.argv.find(arg => arg.startsWith('--brand='));
+  
+  let configFile = 'config.json';
+  
+  if (configFlag) {
+    configFile = configFlag.split('=')[1];
+  } else if (brandFlag) {
+    const brandName = brandFlag.split('=')[1];
+    configFile = `config.${brandName}.json`;
+  }
+
   try {
-    if (fs.existsSync('config.json')) {
-      config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+    if (fs.existsSync(configFile)) {
+      config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+      if (configFile !== 'config.json') {
+        console.log(`📂 Loaded profile: ${configFile}\n`);
+      }
       return config;
+    } else if (configFile !== 'config.json') {
+      console.error(`❌ Error: Configuration file "${configFile}" not found.`);
     }
   } catch (e) {
-    console.error('❌ Error loading config.json:', e.message);
+    console.error(`❌ Error loading ${configFile}:`, e.message);
   }
 
   // Fallback to generic mode

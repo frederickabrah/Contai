@@ -4,7 +4,7 @@
  */
 
 import fs from 'fs';
-import { getBrandKnowledge } from '../core/config.js';
+import { getBrandKnowledge, loadConfig } from '../core/config.js';
 import { getBestModel } from '../core/models.js';
 import { loadBrain } from '../core/brain.js';
 import { getPlatformPrompt } from '../platforms/index.js';
@@ -55,7 +55,7 @@ Use this to make content TIMELY and RELEVANT. @mention people, reference specifi
 const syncBrain = async (newsContent) => {
   console.log('Syncing brain with local state...');
   const brain = loadBrain();
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
 
   const terminology = cfg.nicheSpecific?.terminology || {};
   const customerTerm = terminology.customer || 'customers';
@@ -105,7 +105,7 @@ OUTPUT ONLY JSON:
 export const generateThread = async (topic, platform = 'twitter') => {
   console.log('Generating content thread...');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
   const terminology = cfg.nicheSpecific?.terminology || {};
@@ -212,7 +212,7 @@ Now write content that sounds like a human who wants to help others avoid ${prob
 export const generateThreadWithVibe = async (topic, platform = 'twitter', vibe = 'helpful') => {
   const { getVibeModifier } = await import('../filters/vibe.js');
   const vibeModifier = getVibeModifier(vibe);
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
 
   const todayNews = await readTodayNews();

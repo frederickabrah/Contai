@@ -13,6 +13,7 @@
 
 import fetch from 'node-fetch';
 import { XMLParser } from 'fast-xml-parser';
+import { generateContent } from './modules/core/generator.js';
 
 const parser = new XMLParser({ ignoreAttributes: true });
 
@@ -370,11 +371,13 @@ OUTPUT JSON:
 Return ONLY valid JSON.`;
 
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
+    // Use the centralized generateContent function for model rotation
+    const text = await generateContent(prompt, '', true); // true = skip reflection layer
     
+    if (!text) {
+      throw new Error('AI trend analysis returned null');
+    }
+
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     const analysis = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
     

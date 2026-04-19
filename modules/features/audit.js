@@ -4,6 +4,7 @@
  */
 
 import fs from 'fs';
+import { loadConfig } from '../core/config.js';
 import { generateContent } from '../core/generator.js';
 
 /**
@@ -15,13 +16,19 @@ import { generateContent } from '../core/generator.js';
 export const auditContent = async (userContent, platform = 'twitter') => {
   console.log('🔍 Auditing your content...\n');
 
-  const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8') || '{}');
+  let actualContent = userContent;
+  if (fs.existsSync(userContent)) {
+    actualContent = fs.readFileSync(userContent, 'utf8');
+    console.log(`📖 Read content from file: ${userContent}\n`);
+  }
+
+  const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
 
   const prompt = `You are a Viral Content Editor and Consultant.
 
 CONTENT TO AUDIT:
-${userContent}
+${actualContent}
 
 TASK: Provide a comprehensive audit with:
 
