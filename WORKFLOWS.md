@@ -37,13 +37,21 @@ node contai.js replies "hiring freelancer" twitter
 
 **Action:** Post 3-5 helpful replies with portfolio link
 
-**2. Post Value Content (5 min)**
+**2. Share Authority (5 min)**
 ```bash
-# Share expertise
-node contai.js tweets "design tips" twitter
+# Teach your niche
+node contai.js tutorial "how to choose a brand color palette" twitter
 ```
 
-**Action:** Post 1-2 tips from generated tweets
+**Action:** Post a valuable tutorial from generated content
+
+**3. Build Trust (5 min)**
+```bash
+# Share a personal journey
+node contai.js story "the day I quit my 9-5" twitter
+```
+
+**Action:** Post an authentic story to build human connection
 
 **3. Engage (5 min)**
 - Reply to everyone who commented on your posts

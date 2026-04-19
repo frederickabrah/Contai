@@ -346,7 +346,7 @@ const generateBatchContent = async (platform = 'twitter') => {
 // ============================================================================
 const showHelp = () => {
   console.log(`
-🤖 CONTAI v2.0.0 - UNIVERSAL CONTENT GENERATOR
+🤖 CONTAI v2.2.0 - UNIVERSAL CONTENT GENERATOR
 
 Setup: Copy config.example.json to config.json and customize for your brand!
 
@@ -380,34 +380,37 @@ COMMANDS:
   week [platform]                       - Generate full week (7 days)
   batch [platform]                      - Generate 2 weeks of content
 
-  🆕 MULTIPLY [file/text] [platform]    - Repurpose content into 7 formats
-  🆕 AUDIT [text] [platform]            - Audit your content (Content Doctor)
+  🆕 STORY [topic] [platform]           - Generate authentic personal story
+  🆕 TUTORIAL [topic] [platform]        - Generate step-by-step technical guide
+  🆕 MULTIPLY [url/file/text] [platform]- Repurpose content into 7 formats
+  🆕 AUDIT [url/file/text] [platform]   - Audit your content (Content Doctor)
+  🆕 LAST                               - Preview most recent generated content
   🆕 CSV [file]                         - Export batch content to CSV
   🆕 SEQUENCE [topic] [3|5] [platform]  - Generate 3 or 5-day story sequence
   🆕 TRENDS [category]                  - Fetch real-time trending topics
   🆕 TREND-CONTENT [category] [platform]- Generate content from trends
 
-EXAMPLES:
-  node contai.js thread "5 tips" twitter --vibe=aggressive
-  node contai.js tweets "productivity" linkedin --vibe=scientific
-  node contai.js multiply "my-blog-post.txt" twitter
-  node contai.js audit "Here's my post draft..." twitter
-  node contai.js csv content-batch-2026-03-21.json
-  node contai.js sequence "crypto scams" 3 twitter
-  node contai.js sequence "startup mistakes" 5 linkedin
-  node contai.js trends crypto
-  node contai.js trend-content crypto twitter
-  node contai.js daily twitter
-  node contai.js batch linkedin
+FLAGS:
+  --brand=name    - Use config.{name}.json profile
+  --config=path   - Use specific config file path
+  --vibe=vibe     - Apply sentiment modifier
 
-NEW IN v2.0.0:
-  ✨ Repurposing Engine - Turn 1 idea into 7 formats
-  ✨ Sentiment Overrides - 6 vibe modes
-  ✨ CSV Export - Import to Buffer/Hypefury/Taplio
-  ✨ Content Doctor - Audit & improve your posts
-  ✨ Narrative Sequences - 3 or 5-day storytelling arcs
-  ✨ Real-Time Trends - Fetch trending topics (FREE sources)
-  ✨ Trend-Based Content - Generate from breaking news
+EXAMPLES:
+  node contai.js story "my first win" twitter
+  node contai.js tutorial "smart contracts" --brand=crypto
+  node contai.js multiply https://example.com/blog twitter
+  node contai.js last
+  node contai.js sequence "crypto scams" 5 twitter
+  node contai.js thread "5 tips" twitter --vibe=aggressive
+
+NEW IN v2.2.0:
+  ✨ Multi-Profile Support - Manage multiple brands with --brand flag
+  ✨ URL Scraper - Repurpose any web article into content
+  ✨ Narrative Stories - Personal, authentic storytelling archetype
+  ✨ Technical Tutorials - Step-by-step authority building guides
+  ✨ Lazy Mode - Run "last" to preview content without opening files
+  ✨ Robust AI - Model rotation for 429/Quota errors
+  ✨ Writing DNA - Enhanced Human-like reflection layers
 
 OUTPUT:
   All content is saved to JSON files in this directory

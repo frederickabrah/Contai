@@ -117,21 +117,24 @@ Phase 3: Analyze & Iterate (You do this)
 
 ## 🔄 Content Repurposing System
 
-### The Content Waterfall
+### The Content Waterfall (v2.2.0)
+
+With the **Goldmine Update**, you can start with a URL:
 
 ```
-1 Long Thread
-    ↓
-4-5 Quick Tweets
-    ↓
-1 LinkedIn Post
-    ↓
-1 Instagram Caption
-    ↓
-1 Facebook Post
-    ↓
-1 Blog Post (optional)
+1 Blog Post URL
+    ↓ (node contai.js multiply <url>)
+7 Content Formats Instantly
 ```
+
+**Repurposed Formats:**
+1. Long Thread
+2. 5 Standalone Tweets
+3. Professional Case Study
+4. LinkedIn Post
+5. Instagram Caption
+6. 5 Engagement Questions
+7. 3 Visual Prompts
 
 ### Example: One Thread → Everywhere
 

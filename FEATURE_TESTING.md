@@ -1,4 +1,4 @@
-# 🧪 Contai v2.0.0 - Feature Testing Guide
+# 🧪 Contai v2.2.0 - Feature Testing Guide
 
 ## ✅ All Features Fully Implemented (No Placeholders)
 
@@ -66,7 +66,7 @@ node contai.js thread "success" twitter --vibe=minimalist
 
 ### Expected Output:
 ```
-CONTAI v2.0.0
+CONTAI v2.2.0
 Brand: [Your Brand]
 Industry: [Your Industry]
 
@@ -275,7 +275,7 @@ Every function:
 - ✅ Is documented in README
 - ✅ Is listed in help command
 
-**Contai v2.0.0 is PRODUCTION READY!** 🎉
+**Contai v2.2.0 is PRODUCTION READY!** 🎉
 
 ---
 

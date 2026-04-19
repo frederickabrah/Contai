@@ -382,6 +382,6 @@ Check for:
 
 ---
 
-**Contai v2.0.0 - Now with Narrative Sequences.** 📚
+**Contai v2.2.0 - Now with Narrative Sequences.** 📚
 
 **Stop posting randomly. Start telling stories that convert.**

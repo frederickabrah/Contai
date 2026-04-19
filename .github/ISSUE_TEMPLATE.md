@@ -23,7 +23,7 @@ If applicable, add screenshots or copy/paste error messages to help explain your
 ## 🖥️ Environment:
 - **OS:** [e.g., macOS, Windows, Linux, Termux]
 - **Node version:** [e.g., v18.0.0]
-- **Contai version:** [e.g., v2.0.0]
+- **Contai version:** [e.g., v2.2.0]
 - **Command used:** [e.g., `node contai.js thread "topic" twitter`]
 
 ## 📝 Config (remove sensitive info):

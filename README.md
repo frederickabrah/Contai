@@ -25,7 +25,44 @@ Contai is a **universal content generation tool** that creates viral social medi
 
 ---
 
-## 🆕 What's New in v2.0.0
+## 🆕 What's New in v2.2.0 (The Goldmine Update)
+
+### 📂 Multi-Profile Support (`--brand` flag)
+**Manage multiple brands effortlessly.** No more manual file renaming. Switch niches instantly:
+```bash
+node contai.js daily twitter --brand=crypto
+node contai.js batch linkedin --brand=saas
+```
+
+### 🔗 URL-to-Post Scraper
+**Repurpose anything from the web.** Provide an article link, and Contai extracts the core value and turns it into 7 formats:
+```bash
+node contai.js multiply https://techcrunch.com/article-link twitter
+```
+
+### 📖 New Content Archetypes
+**Move beyond marketing.** Build trust and authority with dedicated generators:
+*   **`story`**: Authentic personal narratives with "Writing DNA" (vulnerability and rhythm).
+*   **`tutorial`**: Step-by-step technical guides to establish you as a mentor.
+
+### 📜 The "Last" Command (Lazy Mode)
+**Preview content instantly.** Stop opening JSON files. See your most recent generation in a clean terminal view:
+```bash
+node contai.js last
+```
+
+### ⚖️ Human Writing Laws
+**Level 2 Humanization.** Moving beyond phrase detection to **Architectural Constraints**:
+- **Rhythm Enforcement**: Mandatory sentence length variation.
+- **The Messy Detail**: Automatically injects small, authentic human quirks.
+- **Show, Don't Tell**: Banned from summarizing themes or "moralizing."
+
+### 🛡️ Quota-Proof Model Rotation
+**Zero downtime on free tier.** Automatically detects `429 Too Many Requests` and rotates between Flash-Lite, Flash, and Pro models without crashing.
+
+---
+
+## 🆕 Feature History
 
 ### 🔄 Repurposing Engine (Multiply Command)
 **Turn 1 idea into 7 formats.** Paste a blog post, winning tweet, or any content:
@@ -82,7 +119,7 @@ node contai.js sequence "your topic" 5 linkedin
 
 ---
 
-## 🚀 Advanced Features (v2.0.0)
+## 🚀 Advanced Features
 
 ### 1. 🧬 Style Mirroring (Identity Injector)
 **Stop sounding like AI.** Create `my-style.txt` and paste 3-5 examples of your best writing. Contai will analyze your sentence rhythm, emoji usage, and unique slang to generate content that sounds exactly like **YOU**.
@@ -532,7 +569,7 @@ node contai.js daily
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2026-03-21  
+**Version:** 2.2.0  
+**Last Updated:** 2026-04-18  
 **Status:** Production Ready  
 **Repository:** https://github.com/frederickabrah/Contai

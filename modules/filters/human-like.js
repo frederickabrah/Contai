@@ -113,18 +113,80 @@ export const AI_PHRASES_TO_BAN = [
   "seek to",
   "look to",
   "hope to",
-  "aspire to"
+  "aspire to",
+  "not only... but also",
+  "seamlessly",
+  "pioneer",
+  "landscape",
+  "ecosystem",
+  "synergy",
+  "streamline",
+  "optimize",
+  "robust",
+  "scalable",
+  "sustainable",
+  "holistic",
+  "well-positioned",
+  "look no further",
+  "search no more",
+  "one-stop-shop",
+  "top-notch",
+  "state-of-the-art",
+  "world-class",
+  "driven by",
+  "powered by",
+  "designed to",
+  "helps you to",
+  "enables you to",
+  "empowers you to",
+  "look at",
+  "let's look at",
+  "let's explore",
+  "let's take a look",
+  "take a closer look",
+  "have you ever",
+  "did you know",
+  "are you tired of",
+  "look no further than",
+  "you're in luck",
+  "without further ado",
+  "last but not least",
+  "to sum up",
+  "as mentioned before",
+  "it goes without saying",
+  "it's no secret",
+  "to be honest",
+  "honestly",
+  "truth be told",
+  "believe it or not",
+  "like it or not",
+  "whether you like it or not",
+  "whether you agree or not"
 ];
 
-// HUMAN PHRASES TO ENCOURAGE
+// HUMAN PHRASES - Good to use
 export const HUMAN_PHRASES = [
   "Here's the thing",
   "Real talk",
   "Look",
   "Listen",
-  "I get it",
   "I've been there",
-  "Trust me",
+  "I learned this the hard way",
+  "Trust me on this",
+  "You're probably thinking",
+  "It sucks",
+  "It's rough",
+  "It's hard",
+  "It's not easy",
+  "It's a nightmare",
+  "It's a mess",
+  "It's a disaster",
+  "Let me save you the pain",
+  "Don't make my mistakes",
+  "Seriously",
+  "No BS",
+  "Directly",
+  "I get it",
   "Believe me",
   "Let me be real",
   "Let's be honest",
@@ -170,9 +232,7 @@ export const HUMAN_PHRASES = [
   "Realistically",
   "Honestly",
   "Frankly",
-  "Seriously",
   "No joke",
-  "No BS",
   "No bullshit",
   "No fluff",
   "No filler",
@@ -214,18 +274,27 @@ export const HUMAN_WRITING_LAWS = [
  * @returns {Promise<string>} Refined content
  */
 export const reflectAndRefine = async (content, originalPrompt, modelName) => {
-  console.log('🧐 CRITICAL: Applying Human Writing Laws...\n');
+  // Robust JSON detection: Check if content contains a JSON structure
+  const jsonMatch = content.match(/\{[\s\S]*\}/);
+  const isJSON = jsonMatch !== null;
+  
+  console.log(`🧐 CRITICAL: Applying Human Writing Laws${isJSON ? ' (JSON Mode)' : ''}...\n`);
   
   const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
   const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
+
+  // If it's JSON, we only want to process the JSON part
+  const contentToProcess = isJSON ? jsonMatch[0] : content;
 
   // Build strict AI detection prompt
   const critiquePrompt = `
 You are a Ruthless Viral Content Editor. Your job is to ELIMINATE all AI-sounding language and enforce the Human Writing Laws.
 
 ORIGINAL CONTENT:
-${content}
+${contentToProcess}
+
+${isJSON ? '⚠️ CRITICAL: The content above is JSON. You MUST return ONLY valid, parseable JSON with the exact same keys. Only humanize the string values inside the JSON.' : ''}
 
 ⚠️ BANNED AI PHRASES (STRICT - AUTO-FAIL IF USED):
 ${AI_PHRASES_TO_BAN.join(', ')}
@@ -233,7 +302,7 @@ ${AI_PHRASES_TO_BAN.join(', ')}
 ⚠️ ARCHITECTURAL WRITING LAWS:
 ${HUMAN_WRITING_LAWS.join('\n')}
 
-🚨 AUTO-FAIL CONDITIONS (Score below 8 = REWRITE):
+🚨 AUTO-FAIL CONDITIONS:
 - Contains ANY phrase from the "BANNED AI PHRASES" list above.
 - Sounds like documentation or marketing copy
 - Uses corporate speak or jargon
@@ -247,9 +316,10 @@ ${HUMAN_WRITING_LAWS.join('\n')}
 IF CONTENT FAILS:
 - REWRITE IT COMPLETELY. 
 - You MUST follow the Writing Laws and BANNED PHRASES list above.
+${isJSON ? '- MAINTAIN VALID JSON STRUCTURE. DO NOT ADD EXTRA TEXT.' : ''}
 
 OUTPUT FORMAT:
-Return ONLY the final rewritten content. No scoring, no explanations.`;
+Return ONLY the final rewritten content${isJSON ? ' as JSON' : ''}. No scoring, no explanations.`;
 
   try {
     const model = genAI.getGenerativeModel({ model: modelName });
@@ -257,13 +327,17 @@ Return ONLY the final rewritten content. No scoring, no explanations.`;
     const response = await result.response;
     let refinedContent = response.text().trim();
     
-    // Extract just the content (remove score lines if present)
-    const contentMatch = refinedContent.match(/(?:SCORE:.*?\n.*?\n.*?\n)?\n?([\s\S]+)/);
-    const finalContent = contentMatch ? contentMatch[1].trim() : refinedContent;
-    
-    // Double-check for banned phrases
+    // If it's JSON, we MUST extract ONLY the JSON part
+    if (isJSON) {
+      const extractedJSON = refinedContent.match(/\{[\s\S]*\}/);
+      if (extractedJSON) {
+        refinedContent = extractedJSON[0];
+      }
+    }
+
+    // Double-check for banned phrases in the refined content
     const hasAIPhrase = AI_PHRASES_TO_BAN.some(phrase => 
-      finalContent.toLowerCase().includes(phrase.toLowerCase())
+      refinedContent.toLowerCase().includes(phrase.toLowerCase())
     );
     
     if (hasAIPhrase) {
@@ -273,7 +347,9 @@ Return ONLY the final rewritten content. No scoring, no explanations.`;
 Rewrite this content to sound 100% human. Remove ALL corporate/AI phrases.
 
 CONTENT:
-${finalContent}
+${refinedContent}
+
+${isJSON ? '⚠️ CRITICAL: The content above is JSON. You MUST return ONLY valid JSON. Only humanize the values.' : ''}
 
 RULES:
 - Replace corporate phrases with casual language
@@ -282,14 +358,23 @@ RULES:
 - Be specific, not generic
 - NO: "In today's", "It's important", "comprehensive", "delve", "leverage", "utilize"
 - YES: "Here's the thing", "Real talk", "Look", "Listen"
+${isJSON ? '- MAINTAIN VALID JSON STRUCTURE. NO EXTRA TEXT.' : ''}
 
 Rewrite it now:`;
       
       const cleanupResult = await model.generateContent(cleanupPrompt);
-      return cleanupResult.response.text().trim();
+      const cleanedText = cleanupResult.response.text().trim();
+      
+      // If it was JSON, ensure we extract only the JSON part from the cleanup result
+      if (isJSON) {
+        const finalJsonMatch = cleanedText.match(/\{[\s\S]*\}/);
+        return finalJsonMatch ? finalJsonMatch[0] : cleanedText;
+      }
+      
+      return cleanedText;
     }
     
-    return finalContent;
+    return refinedContent;
   } catch (e) {
     console.error('⚠️  Reflection failed, using original:', e.message);
     return content;

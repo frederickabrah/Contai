@@ -1,17 +1,17 @@
-# 📢 Contai v2.0.0 - Announcement Posts
+# 📢 Contai v2.2.0 - Announcement Posts
 
 ---
 
 ## 🎉 FOR EXISTING USERS (Email/Long-form)
 
 ```
-🎉 CONTAI v2.0.0 IS HERE! 🎉
+🎉 CONTAI v2.2.0 IS HERE! 🎉
 
 Hey Contai fam! Remember when you first started using Contai v1.0?
 
 Well, we've been BUILDING. And we're dropping something MASSIVE. 🔥
 
-Here's what's NEW in v2.0.0:
+Here's what's NEW in v2.2.0:
 ```
 
 ---
@@ -195,7 +195,7 @@ After:  Update with changelog + rollback protection
 ```
 "Hey! Remember when you started using Contai?
 
-We just dropped v2.0.0 and it's INSANE.
+We just dropped v2.2.0 and it's INSANE.
 
 The same tool you love, but now:
 - 7 new features you'll use daily
@@ -214,7 +214,7 @@ Upgrade now: [link]
 
 ### For New Users:
 ```
-"🚀 Contai v2.0.0 just dropped.
+"🚀 Contai v2.2.0 just dropped.
 
 What is it? The most advanced AI content engine ever built.
 
@@ -295,7 +295,7 @@ Under the hood:
 8/8
 It's free. Open source. And ready.
 
-Try Contai v2.0.0: [link]
+Try Contai v2.2.0: [link]
 
 RT if you're excited. 🚀
 ```
@@ -306,7 +306,7 @@ RT if you're excited. 🚀
 
 ### WhatsApp Dev Group:
 ```
-hey guys, just pushed Contai v2.0.0
+hey guys, just pushed Contai v2.2.0
 
 added some stuff y'all might actually use:
 
@@ -331,7 +331,7 @@ lmk if u find bugs
 
 ### Peerlist Post:
 ```
-shipped Contai v2.0.0
+shipped Contai v2.2.0
 
 what's new:
 
@@ -375,5 +375,5 @@ feedback welcome 🙏
 ---
 
 **Created:** 2026-03-29  
-**Version:** Contai v2.0.0  
+**Version:** Contai v2.2.0  
 **Status:** Ready to post

@@ -39,9 +39,15 @@ export const generateRepurposedContent = async (seedContent, platform = 'twitter
 
   const cfg = loadConfig();
   const brandName = cfg.brand?.name || 'Contai';
-  const url = cfg.brand?.url || 'https://rugsnitch.pages.dev';
+  const url = cfg.brand?.url || 'https://github.com/frederickabrah/Contai';
 
   const prompt = `You are a Content Repurposing Expert.
+
+⚠️ CRITICAL INSTRUCTION: 
+Your task is to REPURPOSE the "SEED CONTENT" provided below. 
+- Use the facts, data, and subject matter from the SEED CONTENT.
+- Use the TONE and VOICE of ${brandName}, but DO NOT replace the subject with ${brandName} products or features unless the seed content is already about them.
+- If the seed content is about a different tool, service, or topic, write about THAT topic using your brand's unique perspective.
 
 SEED CONTENT:
 ${actualContent}
@@ -106,7 +112,8 @@ RULES:
 Return ONLY the JSON object, nothing else.`;
 
   try {
-    const result = await generateContent(prompt, '', false); // false = ENABLE self-critique
+    // Reflection is now JSON-aware, so we can safely enable it
+    const result = await generateContent(prompt, '', false); 
     
     // Extract JSON from response
     const jsonMatch = result?.match(/\{[\s\S]*\}/);

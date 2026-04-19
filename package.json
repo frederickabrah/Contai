@@ -1,6 +1,6 @@
 {
   "name": "contai",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "Contai v2 - Universal AI-powered content growth engine with repurposing, vibe control, and CSV export",
   "main": "contai.js",
   "type": "module",

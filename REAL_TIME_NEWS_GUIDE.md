@@ -2,7 +2,7 @@
 
 ## Overview
 
-Contai v2.0.0 now fetches **real-time trending topics** from multiple sources and generates content based on what's happening RIGHT NOW in your industry.
+Contai v2.2.0 now fetches **real-time trending topics** from multiple sources and generates content based on what's happening RIGHT NOW in your industry.
 
 **Powered by:**
 - 🤖 Gemini AI (decides what to search for)
@@ -537,6 +537,6 @@ node contai.js thread "This week in crypto: Top 5 stories" twitter
 
 ---
 
-**Contai v2.0.0 - Now with Real-Time Trends!** 📰
+**Contai v2.2.0 - Now with Real-Time Trends!** 📰
 
 **Never run out of content ideas. Always post what's trending.** 🚀
